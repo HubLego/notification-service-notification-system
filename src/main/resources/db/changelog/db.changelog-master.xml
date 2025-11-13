@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+
+    <changeSet id="0001" author="Liquibase">
+        <sql>CREATE SCHEMA IF NOT EXISTS notification_service;</sql>
+    </changeSet>
+
+    <include file="01-sms-inbox.sql" relativeToChangelogFile="true"/>
+    <include file="02-email-inbox.sql" relativeToChangelogFile="true"/>
+    <include file="03-push-inbox.sql" relativeToChangelogFile="true"/>
+    <include file="04-telegram-inbox.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>
